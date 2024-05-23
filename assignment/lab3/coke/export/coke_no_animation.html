@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My first X3DOM page</title>
+<!--         <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'></link>
+        <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script> -->
+
+        <script src="http://www.x3dom.org/release/x3dom.js"></script>
+        <link rel="stylesheet" href="http://www.x3dom.org/release/x3dom.css">
+    </head>
+    <body>
+        <div id="main_3d_image">
+            <!-- <x3d id="model3D" style="width: 600px; height: 400px;">
+                <scene>
+                    <!-- Adding multiple light sources 
+                    <directionalLight direction='-1 -1 -1'></directionalLight>
+                    <pointLight location='2 2 2' intensity='0.8'></pointLight>
+                    <spotLight location='0 5 5' direction='0 -1 -1' beamWidth='0.5' cutOffAngle='0.7'></spotLight>
+                    <inline url="../Output/coke_can.x3d"></inline>
+                </scene>
+            </x3d> -->
+
+            <div class ="obj3D" align="center" > <!--Show or hide based on JQuery .click() used to process the objectMediaSelector-->								
+                <x3d >
+                    <scene id="x3domObject">
+                        <!--<inline id="x3domUrl">Media object url will replace the existing url</inline>-->
+                        <inline id="x3domUrl" nameSpaceName="bowl" mapDEFToID="true" onclick="rotateObject();" url="../coke_can.x3d"> </inline>
+                    </scene>
+                </x3d>	
+            </div>
+        </div>
+
+        <script>
+            function rotateObject(){
+                if(document.getElementById('bowl__GrpBowl-TIMER').getAttribute('enabled')!= 'true')
+                     document.getElementById('bowl__GrpBowl-TIMER').setAttribute('enabled', 'true');
+                 else
+                     document.getElementById('bowl__GrpBowl-TIMER').setAttribute('enabled', 'false');
+            }
+        </script>
+    </body>
+</html>

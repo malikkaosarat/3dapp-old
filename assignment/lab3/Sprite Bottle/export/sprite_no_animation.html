@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sprite X3DOM page</title>
+        <script src="http://www.x3dom.org/release/x3dom.js"></script>
+        <link rel="stylesheet" href="http://www.x3dom.org/release/x3dom.css">
+    </head>
+    <body>
+        <div id="main_3d_image">
+
+            <div class ="obj3D" align="center" > <!--Show or hide based on JQuery .click() used to process the objectMediaSelector-->								
+                <x3d >
+                    <scene id="x3domObject">
+                        <!--<inline id="x3domUrl">Media object url will replace the existing url</inline>-->
+                        <inline id="x3domUrl" nameSpaceName="bowl" mapDEFToID="true" onclick="rotateObject();" url="../sprite.x3d"> </inline>
+                    </scene>
+                </x3d>	
+            </div>
+        </div>
+
+        <script>
+            function rotateObject(){
+                if(document.getElementById('bowl__GrpBowl-TIMER').getAttribute('enabled')!= 'true')
+                     document.getElementById('bowl__GrpBowl-TIMER').setAttribute('enabled', 'true');
+                 else
+                     document.getElementById('bowl__GrpBowl-TIMER').setAttribute('enabled', 'false');
+            }
+        </script>
+    </body>
+</html>
